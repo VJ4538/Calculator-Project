@@ -97,15 +97,16 @@ keysArray.forEach((each)=>{
 
             default:
                 //Remove 0 in front
-                if(temp=="0"&&singleNumber[0]=="0"){
+                if(temp=="0"&&singleNumber[0]==="0"){
                     finalResult.innerHTML="0";
                     singleNumber.shift();
                 }else {
                     if(singleNumber[0]=="0"){
                         singleNumber.shift();
+                        singleNumber.push(temp);
+                        displayResult();
                     }else if(signs.includes(temp)===false){
                         if(singleNumber.length<30){
-                            console.log('test')
                             singleNumber.push(temp);
                             displayResult();
                         }else{
